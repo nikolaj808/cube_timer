@@ -11,6 +11,12 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   stop_watch_timer: ^1.2.0+1
+  bloc: ^7.0.0
+  flutter_bloc: ^7.0.1
+  equatable: ^2.0.3
+  jiffy: ^4.1.0
+  sqflite: ^2.0.0+3
+  animated_background: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -18,3 +24,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/

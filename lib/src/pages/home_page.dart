@@ -10,12 +10,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0;
+  final _pageController = PageController(initialPage: 0);
 
-  void _changePage(int page) {
-    setState(() {
-      _currentIndex = page;
-    });
+  late int _currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _currentIndex = 0;
   }
 
   @override
@@ -24,8 +27,14 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
-          print(index);
-          _changePage(index);
+          setState(() {
+            _currentIndex = index;
+            _pageController.animateToPage(
+              index,
+              duration: Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+            );
+          });
         },
         items: [
           BottomNavigationBarItem(
@@ -41,7 +50,10 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: PageView(
-        onPageChanged: _changePage,
+        controller: _pageController,
+        onPageChanged: (index) {
+          setState(() => _currentIndex = index);
+        },
         children: [
           TimingScreen(),
           StatsScreen(),
