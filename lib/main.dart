@@ -1,4 +1,4 @@
-import 'package:cube_timer/app.dart';
+import 'package:cube_timer/src/app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
