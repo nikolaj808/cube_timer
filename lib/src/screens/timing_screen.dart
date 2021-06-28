@@ -6,7 +6,6 @@ import 'package:cube_timer/src/widgets/cube_timing.dart';
 import 'package:cube_timer/src/utilities/utilities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jiffy/jiffy.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 
 class TimingScreen extends StatefulWidget {
